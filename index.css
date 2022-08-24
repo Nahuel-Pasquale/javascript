@@ -6,3 +6,16 @@ body{
     align-items: center;
     flex-direction: column;
 }
+
+.nueva-clase {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+}
+.color-azul {
+    color: blue;
+}
+
+.hidden{
+    display: none;
+}

@@ -49,7 +49,7 @@ const arr = [1,2,-3,4,5,6,7,8,-9,10];
 const arr2 = [5,8,16,-15];
 
 function sumarAll(a ,...args){
-    let sum = a;
+    const sum = a;
     
     for(let arg of args) sum += arg
     
@@ -58,25 +58,30 @@ function sumarAll(a ,...args){
 
 // console.log(sumarAll(1, 2, 4 ,...arr ,5));
 
-let arr3 = [...arr, ...arr2]
+const arr3 = [...arr, ...arr2]
 
 // console.log(arr3)
 
 // console.log(  Math.min(...arr3)  );
 
 
-let mila = new Milanesa('grande', 'espinada', '500', 'soja');
+const mila = new Milanesa('grande', 'espinada', '500', 'soja');
 
-let toppings = {
+const toppings = {
     papasFritas: true,
     queso: true,
     jamon: true,
 }
+const toppingsArr = ['papasFritas','queso','jamon']
 // console.log(mila)
 
-let milaCompleta = { 
+// let milaCompleta = { 
+//     ...mila,
+//     ...toppings,
+// }
+const milaCompleta = { 
     ...mila,
-    ...toppings,
+    toppings: toppingsArr,
 }
 
 

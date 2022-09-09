@@ -13,10 +13,10 @@ const aboutInput = document.getElementById('message');
 
 
 const checkTextInput = (input) => {
-  let valid = false;
-  const content = input.value.trim();
+  let valid = false; // por defecto va a ser false
+  const content = input.value.trim();  // trim() va a eliminar los espacios en blanco
   // verificamos si el campo esta ok o no
-  if(isEmpty(content)){
+  if(isEmpty(content)){ // si esta vacio
     showError(input, "* El nombre es obligatorio") // va a mostrar mi mensaje de error
   } else {
     clearError(input); // va a mostrar mi mensaje de exito
@@ -65,13 +65,13 @@ const checkDate = () => {
   return valid
 }
 
-const isValidForm = () => {
-  const isValidName = checkTextInput(nameInput);
-  const isValidSurname = checkTextInput(surnameInput);
-  const isValidPhone = checkPhone(phoneInput);
-  const isValidEmail = checkEmail(emailInput);
-  const isValidDate = checkDate(dateInput);
-  return (
+const isValidForm = () => { // funcion para validar el formulario
+  const isValidName = checkTextInput(nameInput); // validamos el nombre
+  const isValidSurname = checkTextInput(surnameInput); // validamos el apellido
+  const isValidPhone = checkPhone(phoneInput); // validamos el telefono
+  const isValidEmail = checkEmail(emailInput); // validamos el email
+  const isValidDate = checkDate(dateInput); // validamos la fecha
+  return ( // retornamos un booleano
     isValidName && isValidDate && isValidEmail && isValidSurname && isValidPhone
   )
 }

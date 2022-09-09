@@ -13,9 +13,9 @@
 // console.log(date.getFullYear())
 
 const getNextDay = () => {
-    let tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1)
-    return tomorrow;
+    let tomorrow = new Date(); // creamos una fecha con la fecha de hoy
+    tomorrow.setDate(tomorrow.getDate() + 1) // le sumamos un dia
+    return tomorrow; 
 }
 
 // dd/mm/yyyy
@@ -28,22 +28,23 @@ const getTomorrowDate = () => {
 }
 
 // MANEJO DE FECHAS
-function padTo2Digits(num){
+function padTo2Digits(num){ // lo usamos para que la fecha tenga si o si dos digitos (tanto el dia como el mes)
     return num.toString().padStart(2, "0");
     // padStart agrega caracteres al inicio de nuestra cadena
+    // padEnd agrega caracteres al final de nuestra cadena
 }
 
 const setDateIntervals = () => {
-    dateInput.value = getTomorrowDate();
-    dateInput.min = getTomorrowDate();
-    dateInput.max = getNextDay().getFullYear() + '-12-31';
+    dateInput.value = getTomorrowDate(); // seteamos la fecha de mañana
+    dateInput.min = getTomorrowDate();  // seteamos la fecha minima para que no se pueda elegir una fecha anterior a la de mañana
+    dateInput.max = getNextDay().getFullYear() + '-12-31'; // seteamos la fecha maxima para que no se pueda elegir una fecha posterior a la de fin de año
 };
 
 // ----------------------------------------------------
 // ------------ Checkeo de validaciones ---------------
 // ----------------------------------------------------
 
-const isValidDate = (date) => {
+const isValidDate = () => {
     const currentDate = new Date();
     const turnDate = getNextDay();
     return currentDate < turnDate
@@ -89,17 +90,19 @@ const clearError = (input) => {
 const getRadioValue = (inputs) => {
     // transformamos la nodelist en un array para usar el find
     const checkedInput = [...inputs].find((input) => input.checked);
+    // devuelve un input
     return checkedInput.value // agarramos el valor del input checkeado
 }
 
 const getCheckedOptions = (inputs) => {
     const checkedOptions = [...inputs]
-    .filter(input => input.checked)
-    .map(opt => opt.value);
+    .filter(input => input.checked) // devuelve un array con los inputs checkeados
+    .map(e => e.value); // devuelve un array con los valores de los inputs checkeados
+    // la e del map es el input, representa cada elemento del array
     return checkedOptions;
 }
 
-const formatDate = (date) => {
+const formatDate = (date) => { // 2021-10-10
     // spliteamos la fecha con el metodo split cambiamos la orientacion con el reverse
     // y joineamos otra vez los elementos con una barra separadora
     const splitDate = date.split('-').reverse().join('/');

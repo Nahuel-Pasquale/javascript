@@ -3,16 +3,16 @@
 const cardsContainer = document.getElementById('cards-container');
 const form = document.getElementById('form');
 
-let agenda = JSON.parse(localStorage.getItem('agenda')) || [];
+let agenda = JSON.parse(localStorage.getItem('agenda')) || []; // obtenemos los datos del localstorage o creamos un arreglo vacio
 
-const saveLocalStorage = () => {
-    localStorage.setItem('agenda', JSON.stringify(agenda))
+const saveLocalStorage = () => { // funcion para guardar en el localstorage
+    localStorage.setItem('agenda', JSON.stringify(agenda)) // guardamos el arreglo agenda en el localstorage
 };
 
 const saveData = () => {
-    agenda = [
-        ...agenda,
-        {
+    agenda = [ // creamos un nuevo arreglo
+        ...agenda, // con los datos anteriores
+        { // y agregamos el nuevo turno
             id: agenda.length + 1,
             name: nameInput.value,
             surname: surnameInput.value,
@@ -30,8 +30,8 @@ const saveData = () => {
 const renderTurn = (turn) => {
     // va a renderizar nuestro turno
     // console.log(turn)
-    const { id, name, surname, phone, email, date, time, quantity, extras } = turn;
-    return `
+    const { id, name, surname, phone, email, date, time, quantity, extras } = turn; // destructuring
+    return ` 
         <div class="card ${setCardBackground(quantity)}">
         <div class="card__left">
             <h2 class="card__title"> ORDEN: N°${id} - ${name} ${surname}</h2>
@@ -56,23 +56,21 @@ const renderAgenda = () => {
 }
 
 const submitForm = (e) => {
-    e.preventDefault();
-    if(isValidForm()) {
-        saveData();
-        // console.log(agenda);
-        form.reset();
-        saveLocalStorage();
-        renderAgenda();
-        // volver a setear la fecha.
-        setDateIntervals();
+    e.preventDefault(); // evitamos que se recargue la pagina
+    if(isValidForm()) { // si el formulario es valido
+        saveData(); // guardamos los datos
+        form.reset(); // reseteamos el formulario
+        saveLocalStorage(); // guardamos en el localstorage
+        renderAgenda(); // renderizamos la agenda
+        setDateIntervals(); // seteamos los limites de la fecha
     }
 }
 
 const init = () => {
     renderAgenda();
     // al cargar la pagina se setee los limites de la fecha del input
-    window.addEventListener('DOMContentLoaded', setDateIntervals);
-    form.addEventListener('submit', submitForm);
+    window.addEventListener('DOMContentLoaded', setDateIntervals); // al cargar la pagina se setean los limites de la fecha del input
+    form.addEventListener('submit', submitForm); // al enviar el formulario se ejecuta la funcion submitForm
 }
 
 init();

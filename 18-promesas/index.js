@@ -93,5 +93,5 @@ const url = 'https://pokeapi.co/api/v2/pokemon'
 
 // const promesaFetchPokemon = new Promise(r => fetch(url).then(res => res.json()).then(data => r(data.results)))
 
-
+console.log(fetch(url).then(res => res.json()).then(data => (data.results)))
 

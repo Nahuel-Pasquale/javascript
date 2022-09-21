@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png" />
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>Nucba Weather</title>
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <div class="search">
+        <h1 class="title">El clima en</h1>
+        <form id="form">
+          <button type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <input type="text" name="city" autocomplete="off" placeholder="Buscar Ciudad" class="search-input" />
+        </form>
+      </div>
+      <p class="wait">Ingrese una ciudad...</p>
+      <section class="card-container">
+        <!--  -->
+        <!-- <div class="card-clima animate">
+          <i class="fa-solid fa-x close" data-id='${}'></i>
+          <div class="clima-info">
+                    <h2 class="info-title">${}</h2>
+                    <p class="info-subtitle">${}</p>
+                    <div class="info-temp">
+                      <span class="temp">${}°</span>
+                      <span class="st">${}° ST</span>
+                    </div>
+                  </div>
+                  <div class="clima-img">
+                  <img src="./assets/img/${}.png" alt=""/>
+                  </div>
+                  <div class="clima-temp">
+                    <div class="clima-max-min">
+                      <span class="clima-max"
+                        ><i class="fa-solid fa-arrow-up-long"></i>Max: ${}</span
+                      >
+                      <span class="clima-min"
+                        ><i class="fa-solid fa-arrow-down-long"></i>Min: ${}</span>
+               </div>
+             <span class="clima-humedad">${}% Humedad</span>
+          </div>
+          </div> -->
+        <!--  -->
+      </section>
+    </div>
+  </main>
+  <footer>
+    <p>Hecho con ❤️ en <span>NUCBAJS</span></p>
+  </footer>
+  <script src="./assets/js/request.js"></script>
+  <script src="./assets/js/main.js"></script>
+</body>
+
+</html>

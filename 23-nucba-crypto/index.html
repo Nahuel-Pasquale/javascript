@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CryptoNucba</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./assets/style.css" />
+  </head>
+
+  <body>
+    <div class="main-container">
+      <main class="container">
+        <div class="search-container">
+          <form id="form" name="formulario" class="form">
+            <div class="input-container">
+              <button type="submit" class="search-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+              <input
+                type="text"
+                placeholder="Nombre de la moneda"
+                class="input-search"
+              />
+            </div>
+            <button type="submit" class="search-btn">Buscar</button>
+          </form>
+          <button class="top-btn hidden">Ver top 100</button>
+        </div>
+
+        <section class="table">
+          <!-- create a table with 7 columns -->
+          <table class="styled-table">
+            <thead>
+              <tr>
+                <th>Rank</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Market Cap</th>
+                <th>Volume 24 hs</th>
+                <th>%24 hs</th>
+                <th>%7 days</th>
+              </tr>
+            </thead>
+            <tbody class="tbody">
+              <tr>
+                <td>#20462</td>
+                <td class="coin-title">
+                  Bitcoin (BTC)
+                </td>
+                <td>$28000</td>
+                <td>$282892992</td>
+                <td>$2828828282</td>
+                <td><span class="up">-3.78%</span></td>
+                <td><span class="down">-3.78%</span></td>
+              </tr>
+              <!--  -->
+            </tbody>
+          </table>
+          <div class="pagination">
+            <div class="left">
+              <i class="fa-solid fa-chevron-left"></i>
+            </div>
+            <div class="pages">
+              <button class="page-number active">1</button>
+            </div>
+            <div class="right"><i class="fa-solid fa-chevron-right"></i></div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script src="./assets/request.js"></script>
+    <script src="./assets/main.js"></script>
+  </body>
+</html>

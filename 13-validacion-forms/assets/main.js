@@ -96,7 +96,7 @@ const showError = (input, message) => {
   const error = formField.querySelector("small");
   error.textContent = message;
 }
-const showSuccess = (input, message) => {
+const showSuccess = (input) => {
   const formField = input.parentElement;
   formField.classList.remove("error")
   formField.classList.add("success")

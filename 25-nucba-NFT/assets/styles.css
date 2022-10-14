@@ -593,17 +593,34 @@ main {
 }
 
 .btn-add,
-.btn-buy {
-  background: var(--primary);
-  border: none;
+.btn-buy,
+.btn-delete {
+  cursor: pointer;
   padding: 10px 35px;
   color: var(--bg-white);
   border-radius: 10px;
-  cursor: pointer;
+  border: none;
+  transition: 0.3s all ease-out;
 }
 
-.btn-buy {
+.btn-buy,
+.btn-add {
+  background: var(--primary);
+}
+
+.btn-buy,
+.btn-delete {
   width: 100%;
+}
+
+.btn-delete {
+  border: 2px solid var(--primary);
+  background-color: transparent;
+}
+
+.btn-delete:hover {
+  background: var(--primary);
+  transition: 0.3s all ease-in;
 }
 
 .btn-load {
@@ -652,6 +669,32 @@ footer span {
   background-color: var(--text-gray);
   color: white;
   cursor: not-allowed;
+  border: none;
+}
+.disabled:hover {
+  background-color: var(--text-gray);
+  color: white;
+  cursor: not-allowed;
+  border: none;
+}
+
+.add-modal {
+  padding: 15px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-white);
+  background-color: green;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  transition: all 0.5s ease-out;
+  transform: translateY(200%);
+}
+
+.active-modal {
+  transform: translateY(0);
+  transition: all 0.5s ease-in;
 }
 
 /**

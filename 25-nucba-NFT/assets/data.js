@@ -140,15 +140,13 @@ const productsData = [
 // para hacer la paginación de "ver mas"
 const splitProducts = (size) => {
   let dividedProducts = [];
-  for(let i = 0; i < productsData.length; i += size)
+  for (let i = 0; i < productsData.length; i += size)
     dividedProducts.push(productsData.slice(i, i + size));
   return dividedProducts;
-}
+};
 
 const productsController = {
   dividedProducts: splitProducts(6), //  [[6],[6],[3]]
   nextProductsIndex: 1,
-  productsLimit: splitProducts(6).length
-}
-
-
+  productsLimit: splitProducts(6).length,
+};

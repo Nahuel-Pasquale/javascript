@@ -689,6 +689,7 @@ footer span {
   bottom: 0;
   width: 100%;
   transition: all 0.5s ease-out;
+  text-align: center;
   transform: translateY(200%);
 }
 
